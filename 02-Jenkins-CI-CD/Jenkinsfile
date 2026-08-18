@@ -25,8 +25,9 @@ pipeline {
         stage('Test') {
             steps {
                 // Verify basic project structure
-                echo 'Test stage: Checking for README.md'
-                sh 'test -f README.md'
+                echo 'Test stage: Checking for index.html and style.css'
+                sh 'test -f 02-Jenkins-CI-CD/index.html'
+                sh 'test -f 02-Jenkins-CI-CD/style.css'
             }
         }
 
@@ -36,7 +37,7 @@ pipeline {
                 echo 'Deploying to Nginx web root...'
                 sh '''
                     mkdir -p ${NGINX_WEB_ROOT}
-                    cp -R * ${NGINX_WEB_ROOT}/
+                    cp -R 02-Jenkins-CI-CD/index.html 02-Jenkins-CI-CD/style.css ${NGINX_WEB_ROOT}/
                     echo "Deployment completed successfully."
                 '''
             }

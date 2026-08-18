@@ -23,7 +23,7 @@ Jenkins uses a Controller-Agent architecture. The Jenkins Controller server sche
 ## Pipeline Stages
 1. **Checkout:** Pulls the latest source code from the configured GitHub repository.
 2. **Build:** Verifies the contents of the workspace.
-3. **Test:** Checks for the presence of essential project files (e.g., README.md).
+3. **Test:** Checks for the presence of essential project files (e.g., `index.html` and `style.css`).
 4. **Deploy:** Copies the project files to the configured Nginx web root directory to serve the application locally.
 
 ## Step-by-step Procedure
