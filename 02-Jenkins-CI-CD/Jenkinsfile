@@ -1,0 +1,58 @@
+pipeline {
+    agent any
+
+    environment {
+        // Define Nginx web root path (macOS Homebrew default)
+        NGINX_WEB_ROOT = '/opt/homebrew/var/www/devops-lab'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout source code from GitHub
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Verify workspace
+                echo 'Build stage: Verifying workspace files...'
+                sh 'ls -la'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Verify basic project structure
+                echo 'Test stage: Checking for README.md'
+                sh 'test -f README.md'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Deploy project files to Nginx web root
+                echo 'Deploying to Nginx web root...'
+                sh '''
+                    mkdir -p ${NGINX_WEB_ROOT}
+                    cp -R * ${NGINX_WEB_ROOT}/
+                    echo "Deployment completed successfully."
+                '''
+            }
+        }
+    }
+
+    post {
+        always {
+            cleanWs()
+            echo 'Workspace cleaned.'
+        }
+        success {
+            echo 'Pipeline execution completed successfully. Verify at http://localhost'
+        }
+        failure {
+            echo 'Pipeline execution failed. Please check the Jenkins logs.'
+        }
+    }
+}
