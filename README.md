@@ -56,6 +56,15 @@ DevOps-Automation-Lab-ENSP561/
 │   └── screenshots/             
 │       └── .gitkeep             
 │
+├── 03-Docker-Containerization/  # Experiment 3: Docker Containerization
+│   ├── README.md
+│   ├── Dockerfile
+│   ├── index.html
+│   ├── style.css
+│   ├── .dockerignore
+│   └── screenshots/
+│       └── .gitkeep
+│
 ├── .gitignore                   
 ├── LICENSE                      
 └── README.md                    
@@ -69,6 +78,7 @@ DevOps-Automation-Lab-ENSP561/
 | :---: | :--- | :---: | :---: |
 | **01** | Set up a Git repository and practice branching, merging, and collaborative development. | 🟢 Completed | [View Here](./01-Git-Version-Control/) |
 | **02** | Jenkins CI/CD Pipeline with Nginx Deployment | 🟢 Completed | [View Here](./02-Jenkins-CI-CD/) |
+| **03** | Docker Containerization | 🟢 Completed | [View Here](./03-Docker-Containerization/) |
 
 ---
 
@@ -78,6 +88,7 @@ DevOps-Automation-Lab-ENSP561/
 - **GitHub:** Remote repository hosting and collaboration.
 - **Python:** Used for scripting and sample code modules.
 - **Visual Studio Code (VS Code):** Primary Integrated Development Environment.
+- **Docker:** Platform for containerization of applications.
 - **Jenkins:** CI/CD pipeline automation.
 - **Nginx:** Web server used to host the deployed files.
 

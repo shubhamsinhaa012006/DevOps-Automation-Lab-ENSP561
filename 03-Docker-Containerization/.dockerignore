@@ -1,0 +1,6 @@
+.git
+.gitignore
+README.md
+screenshots
+.DS_Store
+node_modules
