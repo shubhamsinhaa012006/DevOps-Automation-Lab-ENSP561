@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 03 – Docker Containerization</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Experiment 03</h1>
+            <h2>Docker Containerization Lab</h2>
+            <p class="subtitle">By Shubham Sinha (2301010013)</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro card">
+            <h2>Understanding Docker</h2>
+            <p><strong>Docker</strong> is an open-source platform designed to automate the deployment, scaling, and management of applications using containerization. It packages an application and its dependencies into a standard unit of software development called a container.</p>
+        </section>
+
+        <section class="grid-container">
+            <article class="info-card">
+                <div class="icon">🐳</div>
+                <h3>Containerization</h3>
+                <p>The process of isolating an application and its environment into a portable unit. It ensures the application runs consistently across any environment, from development to production.</p>
+            </article>
+            
+            <article class="info-card">
+                <div class="icon">📦</div>
+                <h3>Docker Images</h3>
+                <p>A read-only, immutable template containing the application code, runtime, libraries, environment variables, and config files needed to run a container.</p>
+            </article>
+            
+            <article class="info-card">
+                <div class="icon">⚙️</div>
+                <h3>Docker Containers</h3>
+                <p>A lightweight, standalone, and runnable instance of a Docker image. Containers share the host system's OS kernel but operate in isolated user spaces.</p>
+            </article>
+
+            <article class="info-card">
+                <div class="icon">📜</div>
+                <h3>Dockerfile</h3>
+                <p>A text-based script of instructions that Docker uses to automatically build an image. It defines the base image, environment variables, required files, and execution commands.</p>
+            </article>
+        </section>
+
+        <section class="benefits card">
+            <h2>Benefits of Docker</h2>
+            <ul class="benefits-list">
+                <li><strong>Portability:</strong> Build once, run anywhere. Eliminates the "it works on my machine" problem.</li>
+                <li><strong>Efficiency:</strong> Less overhead than virtual machines since containers share the host kernel.</li>
+                <li><strong>Isolation:</strong> Each container has its own isolated resources, preventing conflicts between applications.</li>
+                <li><strong>Scalability:</strong> Easily spin up multiple container instances to handle increased load.</li>
+                <li><strong>CI/CD Integration:</strong> Seamlessly integrates with continuous integration and deployment pipelines.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>DevOps & Automation Lab (ENSP561) - K.R. Mangalam University</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,5 @@
+IMAGE                            ID             DISK USAGE   CONTENT SIZE   EXTRA
+confluentinc/cp-kafka:7.7.1      653f49c51cfe       1.43GB          480MB   U    
+devops-exp03:latest              12cdf4bfcff5       92.8MB         26.2MB        
+enclave-portal-backend:latest    b1c2aad5ce43        314MB         71.7MB        
+enclave-portal-frontend:latest   17b7acbe707b        576MB          170MB        
