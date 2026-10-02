@@ -1,12 +1,16 @@
 pipeline {
     agent any
 
+    triggers {
+        pollSCM('* * * * *')
+    }
+
     stages {
 
         stage('Build') {
             steps {
-                echo 'Build Stage Started'
-                sh 'echo "Building Project..."'
+                echo '===== BUILD STAGE ====='
+                sh 'echo "Building Application..."'
                 sh 'pwd'
                 sh 'ls -la'
             }
@@ -14,24 +18,34 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Test Stage Started'
-                sh 'echo "Running Tests..."'
-                sh 'echo "Tests Passed Successfully"'
+                echo '===== TEST STAGE ====='
+                sh 'echo "Running Test Cases..."'
+                sh 'echo "All Tests Passed"'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploy Stage Started'
-                sh 'echo "Deploying Application..."'
-                sh 'echo "Deployment Successful"'
+                echo '===== DEPLOY STAGE ====='
+                sh 'mkdir -p deployment'
+                sh 'echo "Application Deployed Successfully" > deployment/status.txt'
+                sh 'cat deployment/status.txt'
             }
         }
     }
 
     post {
+
         success {
-            echo 'Pipeline Executed Successfully'
+            echo 'Deployment Successful!'
+        }
+
+        failure {
+            echo 'Deployment Failed!'
+        }
+
+        always {
+            echo 'Pipeline Execution Finished'
         }
     }
 }
